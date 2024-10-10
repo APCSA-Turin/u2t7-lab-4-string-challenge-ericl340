@@ -11,7 +11,7 @@ public class StringProblems{
     // endsLy("oddy") → false
     public boolean endsLy(String x){
             int tmp = x.length();
-        return x.substring(tmp - 2, tmp).equals("ly");
+        return x.substring(tmp - (tmp < 2 ? tmp : 2), tmp).equals("ly");
     }
 
 
@@ -23,7 +23,7 @@ public class StringProblems{
     // conCat("abc", "") → "abc"
     public String conCat(String s1, String s2){
         //implement code here
-        return s1.charAt(s1.length()) == s2.charAt(0) ? s1 + s2.substring(1) : s1 + s2;
+        return s1.equals("") ? s2 : (s2.equals("") ? s1 : s1.charAt(s1.length() - 1) == s2.charAt(0) ? s1 + s2.substring(1) : s1 + s2);
     }
 
     // Given a string, return a version without the first 2 chars. 
@@ -58,7 +58,7 @@ public class StringProblems{
     // fizzString("fig") → "Fizz"
     // fizzString("dib") → "Buzz"
     // fizzString("fib") → "FizzBuzz"
-    public String fizzString(String s1){
+    public String testfizzString(String s1){
         String tmp = (s1.substring(0, 1).equals("f") ? "Fizz" : "") + (s1.substring(s1.length() - 1).equals("b") ? "Buzz" : "");
         return tmp.equals("") ? s1 : tmp;
     }
@@ -72,7 +72,8 @@ public class StringProblems{
     // fizzString2(1) → "1!"
     // fizzString2(2) → "2!"
     // fizzString2(3) → "Fizz!"
-    public String fizzString2(int x){
-        return "";
+    public String testfizzString2(int x){
+        String tmp = (x % 3 == 0 ? "Fizz" : "") + (x % 5 == 0 ? "Buzz" : "");
+        return (tmp.equals("") ? x : tmp) + "!";
     }
 }
