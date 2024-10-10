@@ -58,7 +58,7 @@ public class StringProblems{
     // fizzString("fig") → "Fizz"
     // fizzString("dib") → "Buzz"
     // fizzString("fib") → "FizzBuzz"
-    public String testfizzString(String s1){
+    public String fizzString(String s1){
         String tmp = (s1.substring(0, 1).equals("f") ? "Fizz" : "") + (s1.substring(s1.length() - 1).equals("b") ? "Buzz" : "");
         return tmp.equals("") ? s1 : tmp;
     }
@@ -72,7 +72,7 @@ public class StringProblems{
     // fizzString2(1) → "1!"
     // fizzString2(2) → "2!"
     // fizzString2(3) → "Fizz!"
-    public String testfizzString2(int x){
+    public String fizzString2(int x){
         String tmp = (x % 3 == 0 ? "Fizz" : "") + (x % 5 == 0 ? "Buzz" : "");
         return (tmp.equals("") ? x : tmp) + "!";
     }
