@@ -1,3 +1,5 @@
+package com.example.project;
+
 public class StringProblems{
     //empty constructor
     public StringProblems(){}
@@ -8,8 +10,8 @@ public class StringProblems{
     // endsLy("y") → false
     // endsLy("oddy") → false
     public boolean endsLy(String x){
-            //implement code here
-        return false;
+            int tmp = x.length();
+        return x.substring(tmp - 2, tmp).equals("ly");
     }
 
 
@@ -21,7 +23,7 @@ public class StringProblems{
     // conCat("abc", "") → "abc"
     public String conCat(String s1, String s2){
         //implement code here
-        return "";
+        return s1.charAt(s1.length()) == s2.charAt(0) ? s1 + s2.substring(1) : s1 + s2;
     }
 
     // Given a string, return a version without the first 2 chars. 
@@ -32,7 +34,7 @@ public class StringProblems{
     // deFront("away") → "aay"
     public String deFont(String s1){
         //implement code here
-        return "";
+        return (s1.substring(0, 1).equals("a") ? "a" : "") + (s1.substring(0, 1).equals("b") ? "b" : "") + s1.substring(2);
     }
 
     
@@ -43,7 +45,10 @@ public class StringProblems{
     // withoutX("xHi") → "Hi"
     // withoutX("Hxix") → "Hxi"
     public String withoutX(String s1){
-        return "";
+        int l = s1.length();
+        String tmp1 = s1.substring(0, 1);
+        String tmp2 = s1.substring(l - 1);
+        return (tmp1.equals("x") ? "" : tmp1) + s1.substring(1, l-1) + (tmp2.equals("x") ? "" : tmp2);
     }
 
     // Given a string str, if the string starts with "f" return "Fizz".
@@ -54,7 +59,8 @@ public class StringProblems{
     // fizzString("dib") → "Buzz"
     // fizzString("fib") → "FizzBuzz"
     public String fizzString(String s1){
-        return "";
+        String tmp = (s1.substring(0, 1).equals("f") ? "Fizz" : "") + (s1.substring(s1.length() - 1).equals("b") ? "Buzz" : "");
+        return tmp.equals("") ? s1 : tmp;
     }
 
     // Given an int n, return the string form of the number followed 
